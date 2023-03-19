@@ -1,12 +1,27 @@
 import banco from "./conexao";
 
-const LivroSchema = banco.Schema;
+const LivroSchema =  new banco.Schema({
+    _id : {
+        type : banco.Schema.Types.ObjectId,
+    },
+    titulo : {
+         type : String
+    },
+    codEditora : {
+        type :Number
+    },
+    resumo : {
+        type : String
+    },
+    autores : {
+        type :[String]
+    },
+}) 
 
-LivroSchema ={
-    _id : banco.Schema.Types.ObjectId,
-    titulo : String,
-    codEditora : Number,
-    resumo : String,
-    autores : [String],
-}
+const Livro = banco.model("Livro", LivroSchema);
+
+module.exports = Livro;
+
+export default Livro;
+
 
