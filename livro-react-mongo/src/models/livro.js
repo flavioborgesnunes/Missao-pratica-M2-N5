@@ -1,15 +1,7 @@
 const mongoose = require("../database");
 
 const LivroSchema = new mongoose.Schema({
-  codigo: {
-    type: Number,
-  },
-
-  codEditora: {
-    type: Number,
-    require: true,
-  },
-
+  
   titulo: {
     type: String,
     require: true,
@@ -19,7 +11,10 @@ const LivroSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-
+  codEditora: {
+    type: Number,
+    require: true,
+  },
   autores: {
     type: [String],
   },

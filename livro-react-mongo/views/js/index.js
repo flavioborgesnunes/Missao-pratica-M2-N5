@@ -2,10 +2,9 @@ $("#novo_livro").submit(function (event) {
     event.preventDefault();
   
     var data = {
-      codigo: $("#inputCodigo").val(),
-      editora: $("#inputEditora").val(),
       titulo: $("#inputTitulo").val(),
       resumo: $("#inputResumo").val(),
+      editora: $("#inputEditora").val(),
       autores: $("#inputAutores").val(),
     };
   
@@ -16,11 +15,10 @@ $("#novo_livro").submit(function (event) {
     };
     $.ajax(request).done(function (response) {
       alert("Livro cadastrado com sucesso!");
-      $("#inputCodigo").val(""),
-        $("#inputEditora").val(""),
-        $("#inputTitulo").val(""),
-        $("#inputResumo").val("");
-        $("#inputAutores").val("");
+      $("#inputTitulo").val(""),
+      $("#inputResumo").val("");
+      $("#inputEditora").val(""),
+      $("#inputAutores").val("");
     });
   });
   

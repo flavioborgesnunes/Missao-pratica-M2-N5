@@ -35,17 +35,16 @@ exports.lista = (req, res) => {
 };
 
 exports.cadastrar = async (req, res) => {
-  const { codigo, codEditora, titulo, resumo, autores } = req.body;
+  const {  titulo, resumo,codEditora, autores } = req.body;
 
   try {
-    if (await Livro.findOne({ codigo }))
+    if (await Livro.findOne({ codEditora }))
       return res.status(400).send({ error: "Livro já cadastrado" });
 
     const livro = await Livro.create({
-      codigo,
-      codEditora,
       titulo,
       resumo,
+      codEditora,
       autores,
     });
 
